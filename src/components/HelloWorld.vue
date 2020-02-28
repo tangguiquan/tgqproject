@@ -1,21 +1,37 @@
 <template>
   <div>
     <div id="menu">
-      <button id="changeLayer" @click="changeLayer">切换</button>
-      <button id="zoom-out" @click="zoomOut">缩小</button>
-      <button id="zoom-in" @click="zoomIn">放大</button>
-      <button  @click="panTo">定位</button>
-      <button  @click="reset">复位</button>
-      <button  @click="showMark">Mark</button>
-      <!-- <button id="dragPan" @click="dragPan">弹框放大</button> -->
-      <button id="drawPoint" @click="drawPoint">画点</button>
-      <button id="drawLine" @click="drawLine">画线</button>
-      <button id="drawPolygon" @click="drawPolygon">画面</button>
-      <button id="modifyPolygon" @click="modifyPolygon">交互</button>
-      <button id="addText" @click="addText">标注</button>
-      <button id="cluster" @click="cluster">聚合</button>
-      <button id="clearAll" @click="clearAll">清除</button>
-      <!-- <el-button type="primary">测试</el-button> -->
+      <!-- <el-button id="changeLayer" @click="changeLayer">切换</el-button>
+      <el-button id="zoom-out" @click="zoomOut">缩小</el-button>
+      <el-button id="zoom-in" @click="zoomIn">放大</el-button>
+      <el-button  @click="panTo">定位</el-button>
+      <el-button  @click="reset">复位</el-button>
+      <el-button  @click="showMark">Mark</el-button>
+      <el-button id="dragPan" @click="dragPan">弹框放大</el-button>
+      <el-button id="drawPoint" @click="drawPoint">画点</el-button>
+      <el-button id="drawLine" @click="drawLine">画线</el-button>
+      <el-button id="drawPolygon" @click="drawPolygon">画面</el-button>
+      <el-button id="modifyPolygon" @click="modifyPolygon">交互</el-button>
+      <el-button id="addText" @click="addText">标注</el-button>
+      <el-button id="cluster" @click="cluster">聚合</el-button>
+      <el-button id="clearAll" @click="clearAll">清除</el-button> -->
+
+      <el-button  id="changeLayer" @click="changeLayer">切换</el-button>
+      <el-button  id="zoom-out" @click="zoomOut">缩小</el-button>
+      <el-button  id="zoom-in" @click="zoomIn">放大</el-button>
+      <el-button  @click="panTo">定位</el-button>
+      <el-button  @click="reset">复位</el-button>
+      <el-button  @click="showMark">Mark</el-button>
+      <el-button  id="drawPoint" @click="drawPoint">画点</el-button>
+      <el-button  id="drawLine" @click="drawLine">画线</el-button>
+      <el-button  id="drawPolygon" @click="drawPolygon">画面</el-button>
+      <el-button  id="modifyPolygon" @click="modifyPolygon">交互</el-button>
+      <el-button  id="addText" @click="addText">标注</el-button>
+      <el-button  id="cluster" @click="cluster">聚合</el-button>
+      <el-button  id="clearAll" @click="clearAll">清除</el-button>
+
+      <!-- <el-el-button >测试</el-el-button> -->
+      
     </div>
     <div style="display: none;">
       <div id="marker" title="Marker"></div>
@@ -69,8 +85,9 @@
   import {getArea, getLength} from 'ol/sphere';
   import {unByKey} from 'ol/Observable';
 
-  import ElementUI from 'element-ui'
-  import 'element-ui/lib/theme-chalk/index.css'
+ /*  import ElementUI from 'element-ui'
+  import 'element-ui/lib/theme-chalk/index.css' */
+
 export default {
   name: 'Map',
   data () {
@@ -257,6 +274,8 @@ this.map.addLayer(clusters);
         for(var i=0;i<overlays.length;i++){
           overlays[i].setPosition(undefined);
         }
+
+        
     },
 
     getTileLayer(){
@@ -784,7 +803,7 @@ this.map.addLayer(clusters);
     float: left;
     position: absolute;
     top: 100px;
-    right: 10px;
+    right: 25px;
     width: 50px;
     height: 200px;
     z-index: 2000;

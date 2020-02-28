@@ -6,8 +6,13 @@ import router from './router'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-Vue.use(ElementUI);
+//Vue.use(ElementUI);
+Vue.use(ElementUI, { size: 'mini', zIndex: 3000 });
 Vue.config.productionTip = false
+
+import echarts from 'echarts'
+Vue.use(echarts)
+Vue.prototype.$echarts = echarts
 
 /* eslint-disable no-new */
 new Vue({
